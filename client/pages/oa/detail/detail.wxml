@@ -1,0 +1,30 @@
+<view class='container'>
+  <view class='banner'>
+    <view class='banner_left'>
+      <text>采购订单</text>
+    </view>
+    <view class='banner_right'>
+      <text>电话:13764089092</text>
+      <text>微信:tianya_1235</text>
+      <text>Email:wp217@126.com</text>
+    </view>
+  </view>
+
+  <template is='req_header' />
+  <template is='req_header' />
+  <template is='req_header' />
+  <template is='req_header' />
+  <template is='req_header' />
+
+  <view class='action'>
+    <button>批准</button>
+    <button>拒绝</button>
+  </view>
+</view>
+
+<template name='req_header'>
+  <view class='req_header'>
+    <text class='req_header_label'>采购订单</text>
+    <text class='req_header_value'>5000897690</text>
+  </view>
+</template>

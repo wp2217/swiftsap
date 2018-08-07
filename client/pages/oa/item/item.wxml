@@ -1,0 +1,45 @@
+<view class='container'>
+  <view class='banner'>
+    <text>财务</text>
+  </view>
+  <template is="date_item" />
+  <template is="request_item" />
+  <template is="request_item" />
+  <template is="request_item" />
+
+  <template is="date_item" />
+  <template is="request_item" />
+
+</view>
+
+<template name="date_item">
+  <view class='date_item'>
+    <view class='date_item-left'>
+      <text class='catergory'>20170809</text>
+    </view>
+    <view class='date_item-right'>
+      <text>周一</text>
+    </view>
+  </view>
+</template>
+
+<template name="request_item">
+  <view class='request_item' bindtap='goToDetail'>
+    <view class='request_item-left'>
+      <image src='../../../image/salary.png'></image>
+    </view>
+    <view class='request_item-right'>
+      <view class='line1'>
+        <text>姓名</text>
+        <text>接受时间</text>
+        <text>单据子类型</text>
+      </view>
+      <view class='line2'>
+        <text>单据Title</text>
+      </view>
+      <view class='line3'>
+        <text>单据号码</text>
+      </view>
+    </view>
+  </view>
+</template>
