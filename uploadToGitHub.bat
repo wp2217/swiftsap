@@ -1,6 +1,7 @@
 git init
 git add .
-git commit -m "first commit"
+git commit -m "Commit"
 git remote add origin https://github.com/wp2217/swiftsap.git
-git push -u origin master
+git pull origin master --allow-unrelated-histories
+git push origin master
 pause

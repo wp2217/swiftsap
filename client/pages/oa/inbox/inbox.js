@@ -32,7 +32,7 @@ Page({
       success: function (res) {
         wx.hideNavigationBarLoading()
         console.log(res.data);
-        that.setData({ cates: res.data.data.cates });
+        that.setData({ cates: res.data.data });
       },
       fail: function (res) {
         wx.hideNavigationBarLoading()
