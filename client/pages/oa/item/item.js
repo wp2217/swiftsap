@@ -24,7 +24,7 @@ Page({
 
     wx.request({
       url: config.service.requestfromsapUrl,
-      method: 'POST',
+      method: 'GET',
       data: {
         wxid: 'tianya_1235',
         json: {
@@ -36,13 +36,19 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        wx.hideNavigationBarLoading();
+        wx.hideNavigationBarLoading()
         console.log(res.data);
+        that.setData({ subCates: res.data.data });
       },
       fail: function (res) {
+        wx.hideNavigationBarLoading()
         console.log(res.data);
         util.showModel("请求失败", res.data);
       },
+      complete: function (res) {
+        wx.hideNavigationBarLoading()
+        // complete
+      }
 
     })
 
@@ -52,6 +58,82 @@ Page({
    */
   onLoad: function (options) {
 
+    var data = {
+      category: 'FICO',
+      items: [{
+        dateWeek: {date: '20180922', week: '周一'},
+        records: [
+          {
+            name: 'Roc Wang',
+            time: '18:09:35',
+            subcategory: 'E-invoice',
+            subject: '请审批Request INV8999',
+            requestid: 'INV8999'
+          },
+          {
+            name: 'Roc Wang',
+            time: '18:19:35',
+            subcategory: 'E-invoice',
+            subject: '请审批Request INV9000',
+            requestid: 'INV9000'
+
+          }]
+      },
+      {
+        dateWeek: {date: '20180923', week: '周二'},
+        records: [
+          {
+            name: '李磊',
+            time: '18:09:35',
+            subcategory: 'E-invoice',
+            subject: '请审批Request INV6666',
+            requestid: 'INV6666'
+          },
+          {
+            name: 'Roc Wang',
+            time: '18:09:35',
+            subcategory: 'E-invoice',
+            subject: '请审批Request INV8999',
+            requestid: 'INV8999'
+          },
+          {
+            name: 'Roc Wang',
+            time: '18:19:35',
+            subcategory: 'E-invoice',
+            subject: '请审批Request INV9000',
+            requestid: 'INV9000'
+
+          }]
+      }
+    
+    ]
+    }
+
+    this.setData({ data: data });
+
+    // wx.request({
+    //   url: config.service.itemUrl,
+    //   data: {
+    //     wxid: 'tianya_1235'
+    //   },
+    //   header: {
+    //     'content-type': 'application/json' // 默认值
+    //   },
+    //   success: function (res) {
+    //     wx.hideNavigationBarLoading()
+    //     console.log(res.data);
+    //     that.setData({ subCates: res.data.data });
+    //   },
+    //   fail: function (res) {
+    //     wx.hideNavigationBarLoading()
+    //     console.log(res.data);
+    //     util.showModel("请求失败", res.data);
+    //   },
+    //   complete: function (res) {
+    //     wx.hideNavigationBarLoading()
+    //     // complete
+    //   }
+    // })
   },
 
   /**

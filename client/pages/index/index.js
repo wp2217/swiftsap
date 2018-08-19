@@ -53,9 +53,6 @@ Page({
     });
   },
   onLoad: function () {
-    console.log('onLoad')
-
-
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function (userInfo) {
@@ -64,11 +61,12 @@ Page({
         userInfo: userInfo
       })
     })
+    //console.log('UserInfo: --->' + JSON.stringify(this.data.userInfo));
   },
   onShow: function () {
     // 设置app语言的全局变量  
     var selectedLanguage = app.globalData.settings.language;
-    console.log('Current Language:' + selectedLanguage + ' (0: ZH-ch 1: ENG)');
+    //console.log('Current Language:' + selectedLanguage + ' (0: ZH-ch 1: ENG)');
     this.setData({
       uindex: selectedLanguage
     })

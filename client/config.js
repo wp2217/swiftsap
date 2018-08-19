@@ -16,6 +16,7 @@ var config = {
 
         //获取单据类别列表
         categoryUrl: `${host}/weapp/category`,
+        itemUrl: `${host}/weapp/item`,
 
         //发送Request
         requestfromsapUrl: `${host}/weapp/request_from_sap`,

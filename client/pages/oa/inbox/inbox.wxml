@@ -15,7 +15,7 @@
 <template name="cate_item">
   <view class='list_item' bindtap='goToItem'> 
     <view class='list_item-left'>
-      <text class='catergory'>{{title}}</text>
+      <text class='catergory'>{{category}}</text>
     </view>
     <view class='list_item-right'>
       <text>{{num}}</text>

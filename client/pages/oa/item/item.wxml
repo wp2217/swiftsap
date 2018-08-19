@@ -1,26 +1,33 @@
 <view class='container'>
   <view class='banner'>
-    <text>财务</text>
+    <text>{{data.category}}</text>
   </view>
-  <template is="date_item" />
-  <template is="request_item" />
+
+  <block wx:for="{{data.items}}" wx:key="{{id}}">
+    <template is="date_item" data="{{...item}}"/>
+  </block>
+
+  <!-- <template is="request_item" />
   <template is="request_item" />
   <template is="request_item" />
 
-  <template is="date_item" />
-  <template is="request_item" />
+  <template is="request_item" /> -->
 
 </view>
 
 <template name="date_item">
   <view class='date_item'>
     <view class='date_item-left'>
-      <text class='catergory'>20170809</text>
+      <text class='catergory'>{{dateWeek.date}}</text>
     </view>
     <view class='date_item-right'>
-      <text>周一</text>
+      <text>{{dateWeek.week}}</text>
     </view>
   </view>
+
+  <block wx:for="{{records}}" wx:key="{{id}}">
+    <template is="request_item" data="{{...item}}"/>
+  </block>
 </template>
 
 <template name="request_item">
@@ -30,15 +37,15 @@
     </view>
     <view class='request_item-right'>
       <view class='line1'>
-        <text>姓名</text>
-        <text>接受时间</text>
-        <text>单据子类型</text>
+        <text>{{name}}</text>
+        <text>{{time}}</text>
+        <text>{{subcategory}}</text>
       </view>
       <view class='line2'>
-        <text>单据Title</text>
+        <text>{{subject}}</text>
       </view>
       <view class='line3'>
-        <text>单据号码</text>
+        <text>{{requestid}}</text>
       </view>
     </view>
   </view>

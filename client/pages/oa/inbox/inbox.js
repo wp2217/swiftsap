@@ -31,17 +31,14 @@ Page({
       },
       success: function (res) {
         wx.hideNavigationBarLoading()
-        console.log(res.data);
         that.setData({ cates: res.data.data });
       },
       fail: function (res) {
         wx.hideNavigationBarLoading()
-        console.log(res.data);
         util.showModel("请求失败", res.data);
       },
       complete: function (res) {
         wx.hideNavigationBarLoading()
-        // complete
       }
     })
 
@@ -101,25 +98,6 @@ Page({
     wx.redirectTo({
       url: '../item/item'
     });
-
-    wx.request({
-      url: config.service.categoryUrl,
-      data: {
-        wxid: 'tianya_1235'
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        console.log(res.data);
-        //util.showSuccess("请求成功");
-        util.showModel("请求OK", res.data);
-      },
-      fail: function (res) {
-        console.log(res.data);
-        util.showModel("请求失败", res.data);
-      },
-    })
   }
 })
 

@@ -12,6 +12,7 @@ const { auth: { authorizationMiddleware, validationMiddleware } } = require('../
 
 //SwiftSAP 
 router.get('/category', controllers.category);
+router.get('/item', controllers.item);
 router.post('/request_from_sap', controllers.request_from_sap);
 
 // --- 登录与授权 Demo --- //
