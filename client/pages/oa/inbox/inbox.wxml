@@ -13,7 +13,7 @@
 </view>
 
 <template name="cate_item">
-  <view class='list_item' bindtap='goToItem'> 
+  <view class='list_item' bindtap='goToItem' data-cate='{{category}}'> 
     <view class='list_item-left'>
       <text class='catergory'>{{category}}</text>
     </view>

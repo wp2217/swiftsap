@@ -1,6 +1,5 @@
 //index.js
 //获取应用实例
-var qcloud = require('../../../vendor/wafer2-client-sdk/index')
 var config = require('../../../config')
 var util = require('../../../utils/util.js')
 
@@ -23,7 +22,7 @@ Page({
       url: config.service.categoryUrl,
       method: 'GET',
       data: {
-        userid: '2',
+        iduser: '1',
         inout: '1'
       },
       header: {
@@ -31,7 +30,11 @@ Page({
       },
       success: function (res) {
         wx.hideNavigationBarLoading()
-        that.setData({ cates: res.data.data });
+        if (!res.data.data) {
+          util.showModel("无数据，请重试！", res.data);
+        } else {
+          that.setData({ cates: res.data.data });
+        }
       },
       fail: function (res) {
         wx.hideNavigationBarLoading()
@@ -94,9 +97,8 @@ Page({
   },
 
   goToItem: function (e) {
-    // console.log(e);
-    wx.redirectTo({
-      url: '../item/item'
+    wx.navigateTo({
+      url: '../item/item?cate=' + e.currentTarget.dataset.cate
     });
   }
 })

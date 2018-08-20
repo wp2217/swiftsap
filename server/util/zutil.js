@@ -1,9 +1,9 @@
 var sortBy = function(attr, rev) {
     //第二个参数没有传递 默认升序排列
-    if (rev == undefined) {
-        rev = 1;
+    if (rev == 'DESC') {
+        rev = -1;
     } else {
-        rev = (rev) ? 1 : -1;
+        rev = 1;
     }
     return function (a, b) {
         a = a[attr];
@@ -17,5 +17,9 @@ var sortBy = function(attr, rev) {
         return 0;
     }
 }
+
+// var test = [{num: 1}, {num: 3}, {num: 2}, {num: 8}, {num: 6}, {num: 3}];
+// test.sort(sortBy('num'));
+//console.log(JSON.stringify(test));
 
 module.exports = { sortBy }

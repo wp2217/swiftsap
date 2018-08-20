@@ -1,32 +1,25 @@
 <view class='container'>
   <view class='banner'>
-    <text>{{data.category}}</text>
+    <text>{{category}}</text>
   </view>
 
-  <block wx:for="{{data.items}}" wx:key="{{id}}">
-    <template is="date_item" data="{{...item}}"/>
+  <block wx:for="{{items}}" wx:key="{{id}}">
+    <template is="date_item" data="{{...item}}" />
   </block>
-
-  <!-- <template is="request_item" />
-  <template is="request_item" />
-  <template is="request_item" />
-
-  <template is="request_item" /> -->
-
 </view>
 
 <template name="date_item">
   <view class='date_item'>
     <view class='date_item-left'>
-      <text class='catergory'>{{dateWeek.date}}</text>
+      <text class='catergory'>{{date}}</text>
     </view>
     <view class='date_item-right'>
-      <text>{{dateWeek.week}}</text>
+      <text>{{week}}</text>
     </view>
   </view>
 
   <block wx:for="{{records}}" wx:key="{{id}}">
-    <template is="request_item" data="{{...item}}"/>
+    <template is="request_item" data="{{...item}}" />
   </block>
 </template>
 

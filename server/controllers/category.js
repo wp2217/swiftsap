@@ -2,12 +2,12 @@ module.exports = async (ctx, next) => {
   const Request = require('../models/Request');
   const Approver = require('../models/Approver');
   let cates = [];
-  let argus = { iduser: 1 }
+  let args = ctx.query;
 
-  var requestIds = await Approver.getRequestIds(argus);
+  var requestIds = await Approver.getRequestIds(args);
 
   if (requestIds) {
-    await Request.getCategory(requestIds).then((result) => {
+    await Request.getCategory({args: args, requestIds: requestIds}).then((result) => {
       cates = result;
     }).catch((err) => {
       cates = null;
@@ -17,15 +17,4 @@ module.exports = async (ctx, next) => {
   }
 
   ctx.state.data = cates;
-
-  // let result = await Request.getByIduser(1);
-
-  // for (const idx in result) {
-  //   if (cates.indexOf(result[idx].category) == -1) {
-  //     cates.push({
-  //       title: result[idx].category,
-  //       num: 8
-  //     });
-  //   }
-  // }
 }

@@ -1,5 +1,6 @@
 // pages/item/item.js
 var config = require('../../../config');
+var util = require('../../../utils/util.js');
 
 Page({
 
@@ -7,133 +8,96 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    category: '',
+    items: []
   },
 
-  // backToIndex: function (e) {
-  //   wx.switchTab({
-  //     url: '../index/index',
-  //   })
-  // },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.setData({ category: options.cate });
 
-  goToDetail: function (e) {
-    wx.showNavigationBarLoading();
-    wx.navigateTo({
-      url: '../detail/detail',
-    });
-
+    var that = this;
     wx.request({
-      url: config.service.requestfromsapUrl,
-      method: 'GET',
+      url: config.service.itemUrl,
       data: {
-        wxid: 'tianya_1235',
-        json: {
-          name: 'roc',
-          tel: '13764089092'
-        }
+        iduser: '1',
+        inout: '1',
+        category: that.options.cate
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
         wx.hideNavigationBarLoading()
-        console.log(res.data);
-        that.setData({ subCates: res.data.data });
+        if (!res.data.data) {
+          util.showModel("提示",'无数据，请重试！');
+        } else {
+          that.setData({ items: res.data.data });
+        }
       },
       fail: function (res) {
         wx.hideNavigationBarLoading()
-        console.log(res.data);
-        util.showModel("请求失败", res.data);
+        util.showModel("失败提示", res);
       },
       complete: function (res) {
         wx.hideNavigationBarLoading()
-        // complete
       }
-
     })
 
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+    // var data = {
+    //   items: [{
+    //     dateWeek: {date: '20180922', week: '周一'},
+    //     records: [
+    //       {
+    //         name: 'Roc Wang',
+    //         time: '18:09:35',
+    //         subcategory: 'E-invoice',
+    //         subject: '请审批Request INV8999',
+    //         requestid: 'INV8999'
+    //       },
+    //       {
+    //         name: 'Roc Wang',
+    //         time: '18:19:35',
+    //         subcategory: 'E-invoice',
+    //         subject: '请审批Request INV9000',
+    //         requestid: 'INV9000'
 
-    var data = {
-      category: 'FICO',
-      items: [{
-        dateWeek: {date: '20180922', week: '周一'},
-        records: [
-          {
-            name: 'Roc Wang',
-            time: '18:09:35',
-            subcategory: 'E-invoice',
-            subject: '请审批Request INV8999',
-            requestid: 'INV8999'
-          },
-          {
-            name: 'Roc Wang',
-            time: '18:19:35',
-            subcategory: 'E-invoice',
-            subject: '请审批Request INV9000',
-            requestid: 'INV9000'
-
-          }]
-      },
-      {
-        dateWeek: {date: '20180923', week: '周二'},
-        records: [
-          {
-            name: '李磊',
-            time: '18:09:35',
-            subcategory: 'E-invoice',
-            subject: '请审批Request INV6666',
-            requestid: 'INV6666'
-          },
-          {
-            name: 'Roc Wang',
-            time: '18:09:35',
-            subcategory: 'E-invoice',
-            subject: '请审批Request INV8999',
-            requestid: 'INV8999'
-          },
-          {
-            name: 'Roc Wang',
-            time: '18:19:35',
-            subcategory: 'E-invoice',
-            subject: '请审批Request INV9000',
-            requestid: 'INV9000'
-
-          }]
-      }
-    
-    ]
-    }
-
-    this.setData({ data: data });
-
-    // wx.request({
-    //   url: config.service.itemUrl,
-    //   data: {
-    //     wxid: 'tianya_1235'
+    //       }]
     //   },
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success: function (res) {
-    //     wx.hideNavigationBarLoading()
-    //     console.log(res.data);
-    //     that.setData({ subCates: res.data.data });
-    //   },
-    //   fail: function (res) {
-    //     wx.hideNavigationBarLoading()
-    //     console.log(res.data);
-    //     util.showModel("请求失败", res.data);
-    //   },
-    //   complete: function (res) {
-    //     wx.hideNavigationBarLoading()
-    //     // complete
+    //   {
+    //     dateWeek: {date: '20180923', week: '周二'},
+    //     records: [
+    //       {
+    //         name: '李磊',
+    //         time: '18:09:35',
+    //         subcategory: 'E-invoice',
+    //         subject: '请审批Request INV6666',
+    //         requestid: 'INV6666'
+    //       },
+    //       {
+    //         name: 'Roc Wang',
+    //         time: '18:09:35',
+    //         subcategory: 'E-invoice',
+    //         subject: '请审批Request INV8999',
+    //         requestid: 'INV8999'
+    //       },
+    //       {
+    //         name: 'Roc Wang',
+    //         time: '18:19:35',
+    //         subcategory: 'E-invoice',
+    //         subject: '请审批Request INV9000',
+    //         requestid: 'INV9000'
+
+    //       }]
     //   }
-    // })
+
+    // ]
+    // }
+
+    // this.setData({ data: data });
+
   },
 
   /**
@@ -182,6 +146,44 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+
+  },
+
+  goToDetail: function (e) {
+    wx.showNavigationBarLoading();
+    wx.navigateTo({
+      url: '../detail/detail',
+    });
+
+    wx.request({
+      url: config.service.requestfromsapUrl,
+      method: 'GET',
+      data: {
+        wxid: 'tianya_1235',
+        json: {
+          name: 'roc',
+          tel: '13764089092'
+        }
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        wx.hideNavigationBarLoading()
+        console.log(res.data);
+        that.setData({ subCates: res.data.data });
+      },
+      fail: function (res) {
+        wx.hideNavigationBarLoading()
+        console.log(res.data);
+        util.showModel("请求失败", res.data);
+      },
+      complete: function (res) {
+        wx.hideNavigationBarLoading()
+        // complete
+      }
+
+    })
 
   }
 })
