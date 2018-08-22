@@ -1,9 +1,9 @@
 <!--pages/user/user.wxml-->
 <view class="container">        
     <view class="form-wrap">
-        <text class="hint">请绑定Employee Email</text>
+        <text class="hint">请绑定公司信息</text>
         <view class="flex-wrap input-wrap">            
-            <text class="label">用户名</text>
+            <text class="label">公司邮箱</text>
             <input value="{{user.username}}" bindinput="updateEmpid" id="username" class="account-info-input"/>
         </view>
         <view class="flex-wrap input-wrap">

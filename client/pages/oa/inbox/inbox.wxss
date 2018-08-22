@@ -1,15 +1,14 @@
 /**index.wxss**/
-
 .banner {
   margin: 5rpx;
-  display: flex;
+  display:flex;
   flex: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #fffff0;
   width: 720rpx;
-  height: 400rpx;
+  height: 200rpx;
   color: #787878;
   box-shadow: 0 0 5px #fffff0, 0 0 15px #eaeaea;
 }
@@ -22,8 +21,9 @@
   display: flex;
   padding: 15rpx;
   border-top: 1rpx solid #eaeaea;
-  border-bottom: 1rpx solid #eaeaea;
-  width: 100%;
+  background-color: #FAFAFA;
+  width: 98%;
+  height: 60rpx;
 }
 
 .list_item .list_item-left {

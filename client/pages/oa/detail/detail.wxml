@@ -1,7 +1,7 @@
 <view class='container'>
   <view class='banner'>
     <view class='banner_left'>
-      <text>采购订单</text>
+      <text>采购订单{{idrequest}}</text>
     </view>
     <view class='banner_right'>
       <text>电话:13764089092</text>
@@ -10,21 +10,21 @@
     </view>
   </view>
 
-  <template is='req_header' />
+  <template is='req_header' data="{{...data}}"/>
   <template is='req_header' />
   <template is='req_header' />
   <template is='req_header' />
   <template is='req_header' />
 
   <view class='action'>
-    <button>批准</button>
-    <button>拒绝</button>
+    <button class="submit" type="primary" bindtap="approve">批准</button>  
+    <button class="submit" type="primary" bindtap="reject">拒绝</button>  
   </view>
 </view>
 
 <template name='req_header'>
   <view class='req_header'>
-    <text class='req_header_label'>采购订单</text>
-    <text class='req_header_value'>5000897690</text>
+    <text class='req_header_label'>{{idrequest}}</text>
+    <text class='req_header_value'>{{idreqjson}}</text>
   </view>
 </template>

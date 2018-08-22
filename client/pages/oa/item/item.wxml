@@ -9,7 +9,7 @@
 </view>
 
 <template name="date_item">
-  <view class='date_item'>
+  <view class='date_item' style="visibility:{{display}}">
     <view class='date_item-left'>
       <text class='catergory'>{{date}}</text>
     </view>
@@ -24,7 +24,7 @@
 </template>
 
 <template name="request_item">
-  <view class='request_item' bindtap='goToDetail'>
+  <view class='request_item' bindtap='goToDetail' data-idrequest='{{idrequest}}' data-idreqjson='{{idreqjson}}'>
     <view class='request_item-left'>
       <image src='../../../image/salary.png'></image>
     </view>

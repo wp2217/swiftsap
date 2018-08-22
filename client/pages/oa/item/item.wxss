@@ -16,21 +16,29 @@
   margin: 5rpx;
   display: flex;
   width: 99%;
+  height: 50rpx;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: #FAFAFA;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
 }
 .date_item text{
-  font-size: 8pt;
+  font-size: 10pt;
 }
 
 .request_item {
   margin: 5rpx;
   display: flex;
   flex-direction: row;
-  border-top: 1px solid #eaeaea;
   width: 98%;
+  height: 150rpx;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.request_item text{
+  font-size: 9pt;
 }
 
 .request_item .request_item-left image {

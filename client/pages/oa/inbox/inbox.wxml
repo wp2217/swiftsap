@@ -17,7 +17,7 @@
     <view class='list_item-left'>
       <text class='catergory'>{{category}}</text>
     </view>
-    <view class='list_item-right'>
+    <view class='list_item-right' wx:if="{{num > 0}}">
       <text>{{num}}</text>
     </view>
   </view>

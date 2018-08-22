@@ -21,6 +21,12 @@ text {
   font-size: 11pt;
 }
 
+.container{
+    background-color: #F8F8F8;
+    font-size: 16px;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+
 /* .container {
   margin-top: 120rpx;
   height: 100%;
