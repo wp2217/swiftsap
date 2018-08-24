@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /server/node_modules/
 =======
 # Logs
@@ -61,3 +62,6 @@ typings/
 .env
 
 >>>>>>> fe92fcef07dd6bd982b97d36fef6ab9b493584e3
+=======
+/server/node_modules/
+>>>>>>> dcf7fb4792a3afb13caf2604db35124fdd252b78
