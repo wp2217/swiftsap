@@ -52,7 +52,7 @@ Page({
       wx.hideLoading();
       wx.showModal({
         title: '绑定失败',
-        content: '请检查输入的检查用户名和密码。',
+        content: '请检查公司邮箱和密码。',
         showCancel: false,
         success: function(res) {
           if (res.confirm) {

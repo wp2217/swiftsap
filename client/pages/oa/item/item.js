@@ -62,7 +62,9 @@ Page({
           //处理记录少的情况占满页面
           count = num - count;
           do {
-            result.push({ display: 'hidden'});
+            result.push({
+              display: 'hidden'
+            });
             count--;
           } while (count > 0);
           //console.log(result);

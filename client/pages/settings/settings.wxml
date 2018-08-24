@@ -6,9 +6,9 @@
 
   <view  class="userinfo">
       <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <!--<text class="userinfo-nickname">{{UI[uindex].greeting}}\n{{userInfo.nickName}}</text>-->
+      <text class="userinfo-nickname">{{UI[uindex].greeting}}\n{{userInfo.nickName}}</text>
       <text class="userinfo-nickname" wx:if="{{user !== null}}">You are logged in as, {{user.username}}</text>
-      <text class="userinfo-nickname" wx:if="{{user == null}}">Please bind with your Employee email</text>
+      <text class="userinfo-nickname" wx:if="{{user == null}}">{{UI[index].pleaseBind}}</text>
   </view>
 
   <view class="page-section">
