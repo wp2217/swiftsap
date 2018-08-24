@@ -1,0 +1,54 @@
+/**index.wxss**/
+.banner {
+  margin: 5rpx;
+  display:flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fffff0;
+  width: 720rpx;
+  height: 200rpx;
+  color: #787878;
+  box-shadow: 0 0 5px #fffff0, 0 0 15px #eaeaea;
+}
+
+.banner-item {
+  margin: 20rpx 0;
+}
+
+.list_item {
+  display: flex;
+  padding: 15rpx;
+  border-top: 1rpx solid #eaeaea;
+  background-color: #FAFAFA;
+  width: 98%;
+  height: 60rpx;
+}
+
+.list_item .list_item-left {
+  margin-left: 15rpx;
+  padding: 3rpx;
+  flex: 1;
+  overflow: hidden;
+  color: #333;
+  font-size: 12pt;
+}
+
+.list_item .list_item-right {
+  margin-right: 15rpx;
+  color: #787878;
+  padding-top: 5rpx;
+  padding-right: 5rpx;
+  font-size: 10pt;
+}
+
+.list_item .list_item-right text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx solid;
+  height: 45rpx;
+  width: 45rpx;
+  border-radius: 50%;
+}

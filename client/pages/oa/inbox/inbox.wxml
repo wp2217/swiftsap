@@ -1,0 +1,24 @@
+<!-- <view class='nav-title'>
+  <text class='appname'>SwiftSAP</text>
+</view> -->
+<view class="container">
+  <view class="banner">
+    <text class='banner-item'>最近7天</text>
+    <text class='banner-item'>X个请求被你处理</text>
+    <text class='banner-item'>超过了Y%的审批者</text>
+  </view>
+<block wx:for="{{cates}}" wx:key="{{id}}">
+  <template is="cate_item" data="{{...item}}"/>
+</block>
+</view>
+
+<template name="cate_item">
+  <view class='list_item' bindtap='goToItem' data-cate='{{category}}'> 
+    <view class='list_item-left'>
+      <text class='catergory'>{{category}}</text>
+    </view>
+    <view class='list_item-right' wx:if="{{num > 0}}">
+      <text>{{num}}</text>
+    </view>
+  </view>
+</template>
