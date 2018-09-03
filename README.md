@@ -23,7 +23,7 @@ WX		展示Request
 
 #### 安装教程
 
-1. 下载ABAPGit（ https://raw.githubusercontent.com/abapGit/build/master/zabapgit.abap） 编译运行ABAPGit
+1. 下载ABAPGit（ https://raw.githubusercontent.com/abapGit/build/master/zabapgit.abap ） 编译运行ABAPGit
 2. 用ABAPGit上传SAP SwiftSAP配置文件
 3. 配置应用
 4. 测试运行标准采购订单
