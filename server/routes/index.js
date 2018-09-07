@@ -14,6 +14,7 @@ const { auth: { authorizationMiddleware, validationMiddleware } } = require('../
 router.get('/category', controllers.category);
 router.get('/item', controllers.item);
 router.post('/request_from_sap', controllers.request_from_sap);
+router.post('/create_request', controllers.create_request);
 
 // --- 登录与授权 Demo --- //
 // 登录接口

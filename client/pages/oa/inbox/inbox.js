@@ -37,6 +37,8 @@ Page({
           const num = 10;
           let cates = new Array();
 
+          console.log('Inbox Data:-->' + JSON.stringify(res.data.data));
+
           cates = cates.concat(res.data.data);
           let length = cates.length;
           let count = num - length;

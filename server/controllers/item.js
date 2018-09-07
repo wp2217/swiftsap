@@ -13,16 +13,16 @@ module.exports = async (ctx, next) => {
       rawItems = result;
       //格式化日期
       for (let idx in rawItems) {
-        rawItems[idx].cdate = rawItems[idx].cdate.toLocaleDateString();
+        rawItems[idx].createdate = rawItems[idx].createdate.toLocaleDateString();
       }
       //按日期时间倒序排序
-      rawItems.sort(util.sortBy('cdate', 'DESC'));
+      rawItems.sort(util.sortBy('createdate', 'DESC'));
 
       //取出日期
       let dates = [];
       for (let idx in rawItems) {
-        if (dates.indexOf(rawItems[idx].cdate) == -1) {
-          dates.push(rawItems[idx].cdate);
+        if (dates.indexOf(rawItems[idx].createdate) == -1) {
+          dates.push(rawItems[idx].createdate);
         }
       }
 
@@ -33,9 +33,9 @@ module.exports = async (ctx, next) => {
         tmpItem.date = dates[idx];
         tmpItem.week = new Date(dates[idx]).getDay();
         for (let idx1 in rawItems) {
-          if (rawItems[idx1].cdate == dates[idx]) {
+          if (rawItems[idx1].createdate == dates[idx]) {
             record.name  = rawItems[idx1].name;
-            record.time  = rawItems[idx1].ctime;
+            record.time  = rawItems[idx1].createtime;
             record.subcategory  = rawItems[idx1].subcategory;
             record.subject  = rawItems[idx1].subject;
             record.requestid  = rawItems[idx1].requestid;

@@ -28,12 +28,12 @@ const request = {
 
         if (args.args.inout == 1) {// Inbox, 未审批
             result = mysql('REQUEST')
-                .select('cdate', 'ctime', 'subcategory', 'subject', 'requestid', 'idrequest', 'idreqjson', 'name1 as name')
+                .select('createdate', 'createtime', 'subcategory', 'subject', 'requestid', 'idrequest', 'idreqjson', 'name1 as name')
                 .innerJoin('USER', 'USER.iduser', 'REQUEST.iduser')
                 .whereIn('idrequest', idrequests).where({ category: category }).whereNull('status');
         } else {
             result = mysql('REQUEST')
-                .select('cdate', 'ctime', 'subcategory', 'subject', 'requestid', 'idrequest', 'idreqjson', 'name1 as name')
+                .select('createdate', 'createtime', 'subcategory', 'subject', 'requestid', 'idrequest', 'idreqjson', 'name1 as name')
                 .innerJoin('USER', 'USER.iduser', 'REQUEST.iduser')
                 .whereIn('idrequest', idrequests).where({ category: category }).whereNotNull('status');
         }
