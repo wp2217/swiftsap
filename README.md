@@ -1,7 +1,7 @@
 ﻿# swiftsap
 
 #### 项目介绍
-SwiftSAP SAP 单据微信、手机审批项目 请登录www.swiftsap.com 测试运行
+SwiftSAP SAP 单据微信、手机审批项目 请登录 http://www.swiftsap.com 测试运行
 具体请联系13764089092 / wp217@126.com
 
 #### 软件架构
