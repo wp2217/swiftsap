@@ -1,39 +1,21 @@
-﻿# swiftsap
+# swiftsap
 
-#### 项目介绍
-SwiftSAP SAP 单据微信、手机审批项目 请登录 http://www.swiftsap.com 测试运行
-具体请联系13764089092 / wp217@126.com
+SwiftSAP is a lite application, simple web and mobile approval for SAP orders.
+Including ABAP side and Fiori side, integration to SAP seamlesslly.
+The application install is as simple as ABAP2XLSX.
 
-#### 软件架构
-软件架构说明
-
-Web Server		存储Request 信息及用户信息					
-		接收WX及Web端取Request的请求					
-		处理WX及Web端Action，并反馈到SAP（审批/拒绝/…）					
-		Web Server端出错Request的展示及处理					
 							
-							
-SAP Server		推送Request到Web Server					
-		接收Web Server的Action					
-		SAP端出错Request的展示及处理					
-		数据翻译，在配置中实现，包括category					
-							
-WX		展示Request					
-		反馈Request审批状态					
+SwiftSAP supports as much as 3 languages.
+Approval button(s), such as approve/reject/sendback, is configurable.
+Supporting IN/OUT transfer, date and currency format for displaying.
+Attachment management and email reminder.
 
+If you want can try, please visit at https://vhcalhdbdb.topsap.net:44300/sap/bc/ui5_ui5/sap/ybc_sws_login/index.html?sap-language=en .
+User:test01 password:111111
+     test02 password:111111
+     
 
-#### 安装教程
+Contact me at wp217@126.com or WeChat:tianya_1235.
 
-1. 下载ABAPGit（ https://raw.githubusercontent.com/abapGit/build/master/zabapgit.abap ） 编译运行ABAPGit
-2. 用ABAPGit上传SAP SwiftSAP配置文件
-3. 配置应用
-4. 测试运行标准采购订单
-
-#### 使用说明
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 参与贡献
-
+									
+#### 中文请直接访问 www.swiftsap.com
