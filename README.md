@@ -13,5 +13,5 @@ Attachment management and email reminder.
 
 Contact me at wp217@126.com or tel: 13764089092.
 
-#### For specific instructions, please refer to the blog.  https://www.cnblogs.com/swiftsap/p/SwiftSAP.html		
+#### For specific instructions, please refer to the blog.  https://www.cnblogs.com/swiftsap/p/20031758		
 #### 中文说明请直接访问                                      https://www.cnblogs.com/swiftsap/p/SwiftSAP.html
